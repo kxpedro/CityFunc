@@ -122,6 +122,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\MunicipioController.cs" />
+    <Compile Include="Entity\Context.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -140,6 +141,7 @@
     <Content Include="Content\font-awesome.min.css" />
     <Content Include="Content\img\man.png" />
     <Content Include="Content\img\map.png" />
+    <Content Include="Content\js\script.js" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="Global.asax" />
@@ -219,7 +221,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Content\js\" />
     <Folder Include="Pictures\" />
   </ItemGroup>
   <ItemGroup>

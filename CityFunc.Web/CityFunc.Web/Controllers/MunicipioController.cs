@@ -1,4 +1,5 @@
-﻿using CityFunc.Web.Models;
+﻿using CityFunc.Web.Entity.Context;
+using CityFunc.Web.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -32,20 +33,24 @@ namespace CityFunc.Web.Controllers
             }
         }
      
-        public ActionResult _partialCreate()
+        public PartialViewResult _partialCreate()
         {
-            return View();
+            return PartialView();
         }
         
         [HttpPost]
         public ActionResult Create(Municipio m)
         {
             try
-            {               
-                //INSERT
-                return RedirectToAction("Index");
+            {
+                using (var dbcontext = new Context())
+                {
+                    dbcontext.Municipio.Add(m);
+                    dbcontext.SaveChanges();
+                }
+                return RedirectToAction("_partialCreate");
             }
-            catch
+            catch(Exception e)
             {
                 return View();
             }
