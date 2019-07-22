@@ -1,0 +1,99 @@
+﻿@model CityFunc.Web.Models.Funcionario
+
+@{
+    ViewBag.Title = "_partialCreate";
+    Layout = null;
+}
+
+@using (Html.BeginForm("Create", "Funcionario", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    @Html.HiddenFor(model => model.Id)
+    <div class="form-group">
+        @Html.LabelFor(model => model.Nome)
+        @Html.TextBoxFor(model => model.Nome, new { @class = "form-control", @placeholder = "Ex: Pedro Henrique" })
+        @Html.ValidationMessageFor(model => model.Nome, "", new { @class = "text-danger" })
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-4">
+            @Html.LabelFor(model => model.Telefone)
+            @Html.TextBoxFor(model => model.Telefone, new { @class = "form-control", @placeholder = "Ex: 51 3469-8698" })
+            @Html.ValidationMessageFor(model => model.Telefone, "", new { @class = "text-danger" })
+        </div>
+        <div class="form-group col-md-4">
+            @Html.LabelFor(model => model.CPF)
+            @Html.TextBoxFor(model => model.CPF, new { @class = "form-control", @placeholder = "Ex: 875.273.750-00" })
+            @Html.ValidationMessageFor(model => model.CPF, "", new { @class = "text-danger" })
+        </div>
+        <div class="form-group col-md-4">
+            @Html.LabelFor(model => model.CEP)
+            @Html.TextBoxFor(model => model.CEP, new { @class = "form-control", @placeholder = "Ex: 94950-450" })
+            @Html.ValidationMessageFor(model => model.CEP, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-8">
+            @Html.LabelFor(model => model.Endereco)
+            @Html.TextBoxFor(model => model.Endereco, new { @class = "form-control", @placeholder = "Ex: Rua Rio Claro" })
+            @Html.ValidationMessageFor(model => model.Endereco, "", new { @class = "text-danger" })
+        </div>
+        <div class="form-group col-md-4">
+            @Html.LabelFor(model => model.Numero)
+            @Html.TextBoxFor(model => model.Numero, new { @class = "form-control", @placeholder = "Ex: 75" })
+            @Html.ValidationMessageFor(model => model.Numero, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-4">
+            @Html.LabelFor(model => model.Complemento)
+            @Html.TextBoxFor(model => model.Complemento, new { @class = "form-control", @placeholder = "Ex: Casa" })
+            @Html.ValidationMessageFor(model => model.Complemento, "", new { @class = "text-danger" })
+        </div>
+        <div class="form-group col-md-4">
+            @Html.LabelFor(model => model.Municipio)
+            @Html.TextBoxFor(model => model.Municipio, new { @class = "form-control", @placeholder = "Ex: Cachoeirinha" })
+            @Html.ValidationMessageFor(model => model.Municipio, "", new { @class = "text-danger" })
+        </div>
+        <div class="form-group col-md-4">
+            @Html.LabelFor(model => model.UF)
+            <select id="UF" name="UF" class="form-control">
+                <option value="AC">Acre</option>
+                <option value="AL">Alagoas</option>
+                <option value="AP">Amapá</option>
+                <option value="AM">Amazonas</option>
+                <option value="BA">Bahia</option>
+                <option value="CE">Ceará</option>
+                <option value="DF">Distrito Federal</option>
+                <option value="ES">Espírito Santo</option>
+                <option value="GO">Goiás</option>
+                <option value="MA">Maranhão</option>
+                <option value="MT">Mato Grosso</option>
+                <option value="MS">Mato Grosso do Sul</option>
+                <option value="MG">Minas Gerais</option>
+                <option value="PA">Pará</option>
+                <option value="PB">Paraíba</option>
+                <option value="PR">Paraná</option>
+                <option value="PE">Pernambuco</option>
+                <option value="PI">Piauí</option>
+                <option value="RJ">Rio de Janeiro</option>
+                <option value="RN">Rio Grande do Norte</option>
+                <option value="RS">Rio Grande do Sul</option>
+                <option value="RO">Rondônia</option>
+                <option value="RR">Roraima</option>
+                <option value="SC">Santa Catarina</option>
+                <option value="SP">São Paulo</option>
+                <option value="SE">Sergipe</option>
+                <option value="TO">Tocantins</option>
+            </select>
+            @Html.ValidationMessageFor(model => model.UF, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="custom-file">            
+            <input type="file" class="custom-file-input" id="file" name="file">            
+            <label class="custom-file-label" for="file">Escolher Arquivo</label>
+        </div>
+    </div>
+    <input type="submit" value="Cadastrar" class="btn btn-primary" />
+}

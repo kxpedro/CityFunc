@@ -1,6 +1,6 @@
 ﻿<div class="row" align="center">
     <div class="col-md-6">
-        <div class="card shadow-sm p-3 mb-5 bg-white rounded" style="width: 22rem; cursor: pointer">
+        <div class="card shadow-sm p-3 mb-5 bg-white rounded" style="width: 22rem; cursor: pointer" data-toggle="modal" data-target="#modalFuncionario">
             <img src="~/Content/img/man.png" class="card-img-top" alt="Funcionario">
             <div class="card-body">
                 <h1 class="display-4">Funcionario</h1>
@@ -18,3 +18,4 @@
 </div>
 
 @{Html.RenderAction("Index", "Municipio");}
+@{Html.RenderAction("Index", "Funcionario");}

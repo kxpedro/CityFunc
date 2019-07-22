@@ -121,6 +121,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\FuncionarioController.cs" />
     <Compile Include="Controllers\MunicipioController.cs" />
     <Compile Include="Entity\Context.cs" />
     <Compile Include="Global.asax.cs">
@@ -216,8 +217,11 @@
     <Content Include="Scripts\popper.js.map" />
     <Content Include="Scripts\popper-utils.min.js.map" />
     <Content Include="Scripts\popper-utils.js.map" />
-    <Content Include="Views\Municipio\_partialSearch.cshtml" />
     <Content Include="Views\Municipio\_partialCreate.cshtml" />
+    <Content Include="Views\Municipio\_partialSearch.cshtml" />
+    <Content Include="Views\Funcionario\_partialCreate.cshtml" />
+    <Content Include="Views\Funcionario\_partialSearch.cshtml" />
+    <Content Include="Views\Funcionario\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
