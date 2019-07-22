@@ -19,35 +19,25 @@ namespace CityFunc.Web.Controllers
         [HttpGet]
         public PartialViewResult _partialSearch()
         {
-            try
-            {
-                using (var dbcontext = new Context())
-                {
-                    var list = dbcontext.Municipio.ToList();
-                    return PartialView(list);
-                }                
-            }
-            catch (Exception e)
-            {
-                return PartialView();
-            }            
+            return PartialView();
         }
 
-        [HttpPost]
-        public ActionResult _partialSearch(string text)
+        [HttpGet]
+        public ActionResult _partialSearchResult(string text)
         {
             try
             {
                 using (var dbcontext = new Context())
                 {
-                    ViewBag.SearchText = dbcontext.Municipio.Where(x => x.Nome.ToLower().Contains(text.ToLower()) || x.UF.ToLower().Contains(text.ToLower())).ToList();
+                    var list = dbcontext.Municipio.Where(x => x.Nome.ToLower().Contains(text.ToLower()) || x.UF.ToLower().Contains(text.ToLower())).ToList();
+                    ViewBag.SearchText = list;
 
-                    return RedirectToAction("Index");
+                    return RedirectToAction("_partialSearch");
                 }                
             }
             catch(Exception e)
             {
-                return RedirectToAction("Index");
+                return RedirectToAction("Index","Home");
             }
         }
 

@@ -222,6 +222,7 @@
     <Content Include="Views\Funcionario\_partialCreate.cshtml" />
     <Content Include="Views\Funcionario\_partialSearch.cshtml" />
     <Content Include="Views\Funcionario\Index.cshtml" />
+    <Content Include="Views\Municipio\_partialSearchResult.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

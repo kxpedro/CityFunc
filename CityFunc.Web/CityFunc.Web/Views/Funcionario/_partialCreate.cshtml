@@ -1,11 +1,10 @@
 ﻿@model CityFunc.Web.Models.Funcionario
 
 @{
-    ViewBag.Title = "_partialCreate";
     Layout = null;
 }
 
-@using (Html.BeginForm("Create", "Funcionario", FormMethod.Post, new { enctype = "multipart/form-data" }))
+@using (Html.BeginForm("_partialCreate", "Funcionario", FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
     @Html.AntiForgeryToken()
     @Html.ValidationSummary(true, "", new { @class = "text-danger" })

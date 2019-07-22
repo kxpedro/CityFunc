@@ -58,7 +58,7 @@ namespace CityFunc.Web.Controllers
         }
         
         [HttpPost]
-        public ActionResult Create(Funcionario f, HttpPostedFileBase file)
+        public ActionResult _partialCreate(Funcionario f, HttpPostedFileBase file)
         {
             try
             {

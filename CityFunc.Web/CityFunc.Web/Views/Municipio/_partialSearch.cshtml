@@ -1,11 +1,10 @@
-﻿@model IEnumerable<CityFunc.Web.Models.Municipio>
+﻿@model CityFunc.Web.Models.Municipio
 
 @{
-    ViewBag.Title = "_partialSearch";
     Layout = null;
 }
 
-@using (Html.BeginForm("_partialSearch", "Municipio", FormMethod.Post))
+@using (Html.BeginForm("_partialSearchResult", "Municipio", FormMethod.Get))
 {
     <div class="input-group mb-3">
         <input type="text" class="form-control" id="text" name="text" placeholder="Ex: Porto Alegre, RS">
@@ -15,29 +14,4 @@
     </div>
 }
 
-@if (ViewBag.SearchText != null)
-{
-    <table class="table">
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.UF)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Nome)
-            </th>
-        </tr>
-
-        @foreach (var item in ViewBag.SearchText as IEnumerable<CityFunc.Web.Models.Municipio>)
-        {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.UF)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Nome)
-                </td>
-            </tr>
-        }
-
-    </table>
-}
+@{Html.RenderAction("_partialSearchResult", "Municipio");}
