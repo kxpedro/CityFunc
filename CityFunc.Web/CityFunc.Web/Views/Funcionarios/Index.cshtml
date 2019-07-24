@@ -1,0 +1,12 @@
+﻿@model IEnumerable<CityFunc.Web.Models.Funcionario>
+
+<div class="row">
+    <div class="col-md-12" align="left">
+        @Html.ActionLink("Cadastrar", "Create", null, new { @class = "btn btn-primary" })
+        <br />
+    </div>
+    <div class="col-md-12">
+        <br />
+        @{Html.RenderAction("_partialSearch");}
+    </div>
+</div>

@@ -1,0 +1,51 @@
+﻿@model IEnumerable<CityFunc.Web.Models.Municipio>
+
+
+@using (Html.BeginForm())
+{
+    <div class="form-inline">
+        <input name="text" id="text" class="form-control col mr-sm-2" type="search" placeholder="Ex: Porto Alegre, RS">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit"><i class="fa fa-search"></i></button>
+    </div>
+}
+
+@if (Model.Any())
+{
+    <br />
+    <table class="table table-bordered table-hover text-center table-sm">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.UF)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Nome)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        @foreach (var item in Model)
+        {
+            <tbody>
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.UF)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Nome)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Editar", "Edit", new { id = item.Id }) |
+                        @Html.ActionLink("Detalhes", "Details", new { id = item.Id }) |
+                        @Html.ActionLink("Deletar", "Delete", new { id = item.Id })
+                    </td>
+                </tr>
+            </tbody>
+        }
+    </table>
+}
+else
+{
+    <br />
+    <div class="alert alert-warning" role="alert">Nenhum Registro Encontrado.</div>
+}

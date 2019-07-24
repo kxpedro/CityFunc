@@ -1,0 +1,92 @@
+﻿@model CityFunc.Web.Models.Funcionario
+
+
+    <div>
+        <h4>Funcionário</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Nome)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Nome)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Telefone)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Telefone)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.CPF)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.CPF)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.CEP)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.CEP)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Endereco)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Endereco)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Numero)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Numero)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Complemento)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Complemento)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Municipio)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Municipio)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.UF)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.UF)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Foto)
+            </dt>
+    
+            <dd>
+                <img src="~/Pictures/@Html.DisplayFor(model => model.Foto)" alt="Foto" style="max-height: 60px" />
+            </dd>
+    
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Editar", "Edit", new { id = Model.Id }, new {@class = "btn btn-primary" })        
+    </p>
